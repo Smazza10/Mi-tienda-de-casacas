@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casaca FC - Contacto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Encabezado del sitio -->
     <header>
-        <!-- Menú de navegación -->
-        <nav>
+         <!-- Menú de navegación -->
+         <nav>
             <a href="index.html" class="logo">
                 <img src="img/logo.png" alt="Logo de Casaca FC">
             </a>
@@ -24,23 +25,40 @@
         </nav>
     </header>
 
-    <!-- Sección de contacto -->
-    <main>
+    <!-- Contenido Principal -->
+    <main class="container mt-4">
+        <!-- Sección de contacto -->
         <section class="contacto">
-            <h1>Tu Contacto</h1>
-            <form>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje"></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-            <p>Si tienes alguna pregunta o necesitas más información, no dudes en contactarnos. <br> Para consultas privadas, puedes comunicarte con nosotros a través de:</p>
-            <p><strong>Email:</strong> <a href="mailto:santimazza1@gmail.com">santimazza1@gmail.com</a></p>
-            <p><strong>Teléfono:</strong> <a href="tel:+541125305599">11 2530 5599</a></p>
+            <h1 class="text-center mb-4">Contacto</h1>
+            <div class="row">
+                <!-- Formulario de Contacto -->
+                <div class="col-md-8 mx-auto">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje:</label>
+                            <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Enviar</button>
+                    </form>
+                </div>
+                <!-- Información de Contacto -->
+                <div class="col-md-4 mt-4 mt-md-0">
+                    <h3>Información de Contacto</h3>
+                    <p><strong>Email:</strong> <a href="mailto:santimazza1@gmail.com">santimazza1@gmail.com</a></p>
+                    <p><strong>Teléfono:</strong> <a href="tel:+541125305599">11 2530 5599</a></p>
+                </div>
+            </div>
         </section>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
