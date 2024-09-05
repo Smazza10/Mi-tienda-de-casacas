@@ -1,0 +1,267 @@
+// Variables
+$primary-color: #2c6e49;
+$secondary-color: #fff;
+$highlight-color: #00ff0d;
+$button-hover-color: #2ace66;
+$background-color: #f0f4f3;
+$box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+$font-family: Arial, sans-serif;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin box-style($padding, $radius) {
+  padding: $padding;
+  border-radius: $radius;
+  box-shadow: $box-shadow;
+}
+
+// Estilo extendido
+%text-center {
+  text-align: center;
+}
+
+// Estilos globales
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  background-color: $background-color;
+}
+
+// Menú de navegación
+nav {
+  background-color: $primary-color;
+  color: $secondary-color;
+  padding: 10px;
+  @include flex-center;
+  justify-content: space-between;
+
+  .logo img {
+    height: 50px;
+  }
+
+  .navbar {
+    list-style: none;
+    @include flex-center;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-left: 20px;
+
+      a {
+        color: $secondary-color;
+        text-decoration: none;
+
+        &:hover {
+          color: $highlight-color;
+          font-size: 25px;
+          transition: font-size 0.3s ease;
+        }
+      }
+    }
+  }
+}
+
+// Sección de inicio (Home)
+.home {
+  background-color: #d9e8dc;
+  padding: 50px;
+  @extend %text-center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Sección "Nosotros"
+.nosotros {
+  @include box-style(40px, 10px);
+  margin: 20px auto;
+  max-width: 800px;
+  @extend %text-center;
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}
+
+// Sección de camisetas
+.camisetas {
+  background-color: $secondary-color;
+  padding: 40px;
+  @extend %text-center;
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  .camisetas-container {
+    @include flex-center;
+    flex-wrap: wrap;
+  }
+
+  .camiseta-item {
+    margin: 20px;
+    @include box-style(20px, 10px);
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    width: calc(33.333% - 40px);
+
+    img {
+      width: 80%;
+      height: 450px;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    p {
+      font-weight: bold;
+    }
+
+    button {
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s, font-size 0.3s;
+
+      &:hover {
+        background-color: $button-hover-color;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+// Sección de galería
+.galeria {
+  @include box-style(40px, 10px);
+  margin: 20px auto;
+  max-width: 1200px;
+  @extend %text-center;
+
+  h1 {
+    margin-bottom: 30px;
+    font-size: 32px;
+  }
+
+  .galeria-container {
+    @include flex-center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .galeria-item {
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: calc(33.333% - 40px);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+
+    img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+// Sección de contacto
+.contacto {
+  @include box-style(40px, 10px);
+  margin: 20px auto;
+  max-width: 800px;
+  @extend %text-center;
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 10px 0;
+    max-width: 90%;
+  }
+
+  form {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 150px;
+    }
+
+    button {
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #00ff5e;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
