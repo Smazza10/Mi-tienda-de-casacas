@@ -122,14 +122,16 @@ nav {
 
   .camiseta-item {
     margin: 20px;
+    margin-bottom: 60px; // Añadido para espaciado vertical
     @include box-style(20px, 10px);
     border: 1px solid #ccc;
     background-color: #f9f9f9;
-    width: calc(33.333% - 40px);
+    width: calc(50% - 40px); // Tamaño más pequeño y 2 por fila
+    height: 400px; // Altura fija para asegurar que todas las camisetas sean del mismo tamaño
 
     img {
       max-width: 100%;  // Ajustar imagen al tamaño del contenedor
-      height: auto;     // Mantener proporciones
+      height: 100%;     // Ajustar imagen a la altura del contenedor
       border-radius: 10px;
       object-fit: cover;
       transition: transform 0.3s ease;
@@ -157,6 +159,14 @@ nav {
         font-size: 20px;
       }
     }
+  }
+}
+
+// Responsivo para móviles
+@media (max-width: 768px) {
+  .camiseta-item {
+    width: 100%; // Camisetas ocuparán toda la fila en pantallas pequeñas
+    height: auto; // Ajustar la altura en pantallas más pequeñas
   }
 }
 
